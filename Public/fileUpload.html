@@ -1,0 +1,23 @@
+<html>
+
+<body>
+  <form action="/" method="post" enctype="multipart/form-data">
+    <fieldset>
+      <input type="radio" name="Language" value="C" checked> C<br>
+      <input type="radio" name="Language" value="CPP"> CPP<br>
+      <input type="radio" name="Language" value="JS"> javaScript NOT WORKING<br>
+      <input type="radio" name="Language" value="PY"> Python<br>
+      <input type="file" id="file" name="file" />
+      <input type="submit" id="submitButton" value="submit" />
+    </fieldset>
+  </form>
+</body>
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+
+<script>
+var socket = io();
+  socket.on("connect", function() {
+    console.log("Connected");
+  })
+</script>
+</html>

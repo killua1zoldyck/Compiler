@@ -1,0 +1,21 @@
+<html>
+
+<body>
+  <p>The output for code is:-</p>
+  <p id="output"></p>
+</body>
+
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+
+<script>
+  var socket = io();
+  socket.on("connect", function() {
+    console.log("Connected");
+
+    socket.on("sendOutput", function(output) {
+        console.log(output.output);
+        document.getElementById("output").innerHTML = output.output;
+    });
+  });
+</script>
+</html>
